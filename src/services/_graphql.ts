@@ -3,7 +3,7 @@ export const graphql = async <T>(query: string) => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `bearer ${process.env.GITHUB_TOKEN}`,
+      Authorization: `bearer ${process.env.GITHUB_PROJECT_TOKEN}`,
     },
     body: JSON.stringify({ query })
   });

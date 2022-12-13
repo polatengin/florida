@@ -10,10 +10,10 @@ export default () => {
     <header className="flex bg-gray-800 text-base font-medium text-gray-50">
       <div className="w-full flex items-center justify-between border-b-2 border-gray-100 p-6">
         <div className="flex justify-start items-center">
-          <a href="/">
+          <Link href="/">
             <span className="sr-only">Project Florida</span>
             <ChartIcon className="h-8 w-auto" />
-          </a>
+          </Link>
           <nav className="space-x-10 ml-10">
             <Link href="/chart" className="hover:text-gray-200">Chart</Link>
             <a href="#" className="hover:text-gray-200">Pricing</a>

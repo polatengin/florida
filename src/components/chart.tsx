@@ -63,6 +63,15 @@ export default ({project_fields, project_issue_items}: Props) => {
     });
     return collisionItems;
   };
+
+  const updatePriorityFilter = (e: any) => {
+    setSelectedPriorities(selectedPriorities.map(sp => {
+      if (sp.p === parseInt(e.value, 10)) {
+        sp.s = !sp.s;
+      }
+      return sp;
+    }));
+  };
   return (
   <div>
     <h1>Chart</h1>

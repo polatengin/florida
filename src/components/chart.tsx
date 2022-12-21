@@ -35,6 +35,18 @@ export default ({project_fields, project_issue_items}: Props) => {
         : remainingDays > 1 ? <OctagonIcon style={{borderColor:"#00000050"}} />
         : <FireIcon style={{borderColor:"#00000050"}} />
   };
+
+  const high_low_CellRef = useRef<HTMLDivElement>(null);
+
+  const [riskItems, setRiskItems] = useState<ProjectIssueItem[]>();
+  const [filteredRiskItems, setFilteredRiskItems] = useState<ProjectIssueItem[]>();
+  const [groupedRiskItems, setGroupedRiskItems] = useState<GroupItem[]>();
+  const [selectedPriorities, setSelectedPriorities] = useState<{p:number, s:boolean}[]>([]);
+  const [filterMitigated, setFilterMitigated] = useState<boolean>(true);
+  const [stepWidth, setStepWidth] = useState<number>(0);
+  const [stepHeight, setStepHeight] = useState<number>(0);
+  const [selectedGroup, setSelectedGroup] = useState<GroupItem>();
+
   const detectCollision = (item: ProjectIssueItem, items: ProjectIssueItem[]): ProjectIssueItem[] => {
     const collisionItems: ProjectIssueItem[] = [];
     items.forEach((i) => {

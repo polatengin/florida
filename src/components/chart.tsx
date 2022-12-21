@@ -35,6 +35,22 @@ export default ({project_fields, project_issue_items}: Props) => {
         : remainingDays > 1 ? <OctagonIcon style={{borderColor:"#00000050"}} />
         : <FireIcon style={{borderColor:"#00000050"}} />
   };
+  const detectCollision = (item: ProjectIssueItem, items: ProjectIssueItem[]): ProjectIssueItem[] => {
+    const collisionItems: ProjectIssueItem[] = [];
+    items.forEach((i) => {
+      if (i.id !== item.id && i.cell === item.cell) {
+        const x1 = item.impact * 10 * stepWidth;
+        const y1 = item.probability * 10 * stepHeight;
+        const x2 = i.impact * 10 * stepWidth;
+        const y2 = i.probability * 10 * stepHeight;
+        const distance = Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+        if (distance < 30) {
+          collisionItems.push(i);
+        }
+      }
+    });
+    return collisionItems;
+  };
   return (
   <div>
     <h1>Chart</h1>

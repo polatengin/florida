@@ -23,6 +23,18 @@ export default ({project_fields, project_issue_items}: Props) => {
     </button>;
   };
 
+  const renderShapeIcon = (item: ProjectIssueItem, groupLength: number): ReactNode => {
+    const today = new Date();
+    const priorityInDays = getDurationByPriority(item.priority);
+    const expirationDate = new Date(new Date(item.createdAt).getTime() + (priorityInDays * 24 * 60 * 60 * 1000));
+    const remainingDays = Math.ceil((expirationDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
+
+    return groupLength > 0 ?
+        <CircleIcon />
+        : remainingDays > 7 ? <CircleIcon />
+        : remainingDays > 1 ? <OctagonIcon style={{borderColor:"#00000050"}} />
+        : <FireIcon style={{borderColor:"#00000050"}} />
+  };
   return (
   <div>
     <h1>Chart</h1>

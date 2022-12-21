@@ -93,6 +93,12 @@ export default ({project_fields, project_issue_items}: Props) => {
         return 2;
     }
   };
+  const flattenGroups = (groups: GroupItem[]): number[] => {
+    const idListGroup = groups.map(e => e.group.map(m => m.id));
+    const idListGroupFlatten = ([] as number[]).concat(...idListGroup);
+    const idListKey = groups.map(e => e.key.id);
+    return [...idListGroupFlatten, ...idListKey];
+  };
   return (
   <div>
     <h1>Chart</h1>

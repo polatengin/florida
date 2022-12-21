@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .rotate-vertical {
+    writing-mode: vertical-lr;
+  }
+  .grid-template-area {
+    grid-template-columns: 20px 20px repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr) 20px 20px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    "label-y . . . ."
+    "label-y . . . ."
+    "label-y . . . ."
+    ". . . . ."
+    "filter filter filter label-x .";
+  }
+  .label-y {
+    grid-area: label-y;
+  }
+  .label-x {
+    grid-area: label-x;
+  }
+}

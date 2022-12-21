@@ -72,6 +72,27 @@ export default ({project_fields, project_issue_items}: Props) => {
       return sp;
     }));
   };
+
+  const getDurationByPriority = (priority: number): number => {
+    switch (priority) {
+      case 1:
+        return 2;
+      case 2:
+        return 7;
+      case 3:
+        return 14;
+      case 4:
+        return 30;
+      case 5:
+        return 90;
+      case 6:
+        return 180;
+      case 7:
+        return 365;
+      default:
+        return 2;
+    }
+  };
   return (
   <div>
     <h1>Chart</h1>

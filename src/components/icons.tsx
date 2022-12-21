@@ -46,3 +46,55 @@ export const OctagonIcon: FunctionComponent<IconProps> = (props: IconProps) => (
     <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2" />
   </svg>
 );
+
+export const Priority1Icon: FunctionComponent<IconProps> = (props: IconProps) => (
+  <svg fill="#fff" viewBox="0 0 256 256" stroke="currentColor" style={props.style} className={props.className} onClick={props.onClick}>
+    <circle cx="128" cy="128" r="106" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="8" />
+    <polyline fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="8" points="108 99.993 132 84 132 176" />
+  </svg>
+);
+
+export const Priority2Icon: FunctionComponent<IconProps> = (props: IconProps) => (
+  <svg fill="#fff" viewBox="0 0 256 256" stroke="currentColor" style={props.style} className={props.className} onClick={props.onClick}>
+    <circle cx="128" cy="128" r="106" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="8" />
+    <path fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="8" d="M105.886,94.65812a24.00387,24.00387,0,1,1,42.01514,22.7605v0L104,176v-.00575h48" />
+  </svg>
+);
+
+export const Priority3Icon: FunctionComponent<IconProps> = (props: IconProps) => (
+  <svg fill="#fff" viewBox="0 0 256 256" stroke="currentColor" style={props.style} className={props.className} onClick={props.onClick}>
+    <circle cx="128" cy="128" r="106" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="8" />
+    <path fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="8" d="M103.99683,83.99216h48L124.00317,124a28,28,0,1,1-19.799,47.799" />
+  </svg>
+);
+
+
+export const Priority4Icon: FunctionComponent<IconProps> = (props: IconProps) => (
+  <svg fill="#fff" viewBox="0 0 256 256" stroke="currentColor" style={props.style} className={props.className} onClick={props.onClick}>
+    <circle cx="128" cy="128" r="106" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="8" />
+    <polyline fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="8" points="123.998 76 100 144 148 144" />
+    <line x1="148" x2="148" y1="112" y2="176" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="8" />
+  </svg>
+);
+
+export const Priority5Icon: FunctionComponent<IconProps> = (props: IconProps) => (
+  <svg fill="#fff" viewBox="0 0 256 256" stroke="currentColor" style={props.style} className={props.className} onClick={props.onClick}>
+    <circle cx="128" cy="128" r="106" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="8" />
+    <path fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="8" d="M152,80H111.83477L104,128.20232a27.99935,27.99935,0,1,1,0,39.5969" />
+  </svg>
+);
+
+export const Priority6Icon: FunctionComponent<IconProps> = (props: IconProps) => (
+  <svg fill="#fff" viewBox="0 0 256 256" stroke="currentColor" style={props.style} className={props.className} onClick={props.onClick}>
+    <circle cx="128" cy="128" r="106" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="8" />
+    <line x1="103.751" x2="136" y1="129.99" y2="76" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="8" />
+    <circle cx="128" cy="144" r="28" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="8" />
+  </svg>
+);
+
+export const Priority7Icon: FunctionComponent<IconProps> = (props: IconProps) => (
+  <svg fill="#fff" viewBox="0 0 256 256" stroke="currentColor" style={props.style} className={props.className} onClick={props.onClick}>
+    <circle cx="128" cy="128" r="106" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="8" />
+    <polyline fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="8" points="104 84 152 84 120 180" />
+  </svg>
+);

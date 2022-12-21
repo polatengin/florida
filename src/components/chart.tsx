@@ -6,6 +6,8 @@ type Props = {
   project_issue_items: ProjectIssueItem[];
 };
 
+type GroupItem = { cell: string, key: ProjectIssueItem, group: ProjectIssueItem[] };
+
 export default ({project_fields, project_issue_items}: Props) => {
 
   console.log({project_fields, project_issue_items});

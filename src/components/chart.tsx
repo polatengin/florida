@@ -166,8 +166,32 @@ export default ({project_fields, project_issue_items}: Props) => {
   }, [selectedPriorities, filteredRiskItems, filterMitigated]);
 
   return (
-  <div>
-    <h1>Chart</h1>
+  <div className="w-full h-full">
+    <div className="h-full grid grid-template-area gap-0.5">
+      <div className="rotate-vertical text-center">HIGH</div>
+      <div className="bg-yellow-400">{groupedRiskItems?.filter(e => e.cell === "High-Low").map(renderGroupItem)}</div>
+      <div className="bg-red-400">{groupedRiskItems?.filter(e => e.cell === "High-Medium").map(renderGroupItem)}</div>
+      <div className="bg-red-400">{groupedRiskItems?.filter(e => e.cell === "High-High").map(renderGroupItem)}</div>
+      <div className="label-y rotate-vertical text-center"><span>PROBABILITY <button className="information-button" title="Likelihood that the risk will result in impact to the project"><QuestionIcon /></button></span></div>
+      <div className="rotate-vertical text-center">MEDIUM</div>
+      <div className="bg-green-400">{groupedRiskItems?.filter(e => e.cell === "Medium-Low").map(renderGroupItem)}</div>
+      <div className="bg-yellow-400">{groupedRiskItems?.filter(e => e.cell === "Medium-Medium").map(renderGroupItem)}</div>
+      <div className="bg-red-400">{groupedRiskItems?.filter(e => e.cell === "Medium-High").map(renderGroupItem)}</div>
+      <div className="rotate-vertical text-center">LOW</div>
+      <div className="bg-green-400">{groupedRiskItems?.filter(e => e.cell === "Low-Low").map(renderGroupItem)}</div>
+      <div className="bg-green-400">{groupedRiskItems?.filter(e => e.cell === "Low-Medium").map(renderGroupItem)}</div>
+      <div className="bg-yellow-400">{groupedRiskItems?.filter(e => e.cell === "Low-High").map(renderGroupItem)}</div>
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+      <div className="text-center">LOW</div>
+      <div className="text-center">MEDIUM</div>
+      <div className="text-center">HIGH</div>
+      <div className="label-x text-center"><span>IMPACT <button className="information-button" title="Degree of impact to the success of the project"><QuestionIcon /></button></span></div>
+    </div>
+    <div className="flex">
+      {selectedPriorities.map(item => { return ( <label className="select-none inline-flex" htmlFor={`chk${item.p}`} key={item.p}><input id={`chk${item.p}`} onChange={e => updatePriorityFilter(e.target)} type="checkbox" checked={item.s} value={item.p} />Priority {item.p}</label> ) })}
+      <label className="select-none inline-flex flex-grow justify-end" htmlFor="chkmitigated"><input id="chkmitigated" onChange={e => setFilterMitigated(!filterMitigated)} type="checkbox" checked={filterMitigated} />Include Mitigated</label>
+    </div>
   </div>
   )
 };

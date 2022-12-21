@@ -33,9 +33,9 @@ export default ({project_fields, project_issue_items}: Props) => {
         <meta name="description" content="Project Florida" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex flex-col h-screen">
+      <div className="flex flex-col h-screen overflow-hidden">
         <Header />
-        <main className="grid h-full p-6">
+        <main className="h-full p-6">
           <Chart project_fields={project_fields} project_issue_items={project_issue_items} />
         </main>
       </div>

@@ -16,9 +16,8 @@ export default () => {
           </Link>
           <nav className="space-x-10 ml-10">
             <Link href="/chart" className="hover:text-gray-200">Chart</Link>
-            <a href="#" className="hover:text-gray-200">Pricing</a>
-            <a href="#" className="hover:text-gray-200">Docs</a>
-            <a href="#" className="hover:text-gray-200">More</a>
+            <a href="https://github.com/polatengin/florida" className="hover:text-gray-200">GitHub Repo</a>
+            <a href="https://github.com/polatengin/florida" className="hover:text-gray-200">Docs</a>
           </nav>
         </div>
         <div className="items-center justify-end">

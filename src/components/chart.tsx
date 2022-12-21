@@ -99,6 +99,63 @@ export default ({project_fields, project_issue_items}: Props) => {
     const idListKey = groups.map(e => e.key.id);
     return [...idListGroupFlatten, ...idListKey];
   };
+
+  useEffect(() => {
+    const width = high_low_CellRef.current?.clientWidth ?? 0;
+    const height = high_low_CellRef.current?.clientHeight ?? 0;
+    setStepWidth((width-30) / 30);
+    setStepHeight((height-30) / 30);
+
+    setRiskItems(project_issue_items);
+    setFilteredRiskItems(project_issue_items);
+    setSelectedPriorities(project_issue_items.map(e => e.priority).filter((v, i, a) => a.indexOf(v) === i).sort((a, b) => a - b).map(e => { return {p:e, s:true} }) ?? []);
+  }, [high_low_CellRef.current?.clientWidth, high_low_CellRef.current?.clientHeight]);
+
+  useEffect(() => {
+    if (filteredRiskItems === undefined) {
+      return;
+    }
+    if (filteredRiskItems.length === 0) {
+      return;
+    }
+    const items = filteredRiskItems?.filter(e => { if (!filterMitigated) { return !e.isMitigated } return true; }).filter(e => selectedPriorities.filter(sp => sp.s).map(sp => sp.p).indexOf(e.priority) > -1 ) ?? [];
+    const groups: GroupItem[] = [];
+    items.forEach((item) => {
+      const collisionItems = detectCollision(item, items);
+      if (collisionItems.length > 0) {
+        groups.push({cell: item.cell, key:item, group: collisionItems});
+        collisionItems.forEach((collisionItem) => {
+          const index = items.findIndex((i) => i.id === collisionItem.id);
+          if (index > -1) {
+            items.splice(index, 1);
+          }
+        });
+      } else {
+        groups.push({cell: item.cell, key:item, group: []});
+        const index = items.findIndex((i) => i.id === item.id);
+        if (index > -1) {
+          items.splice(index, 1);
+        }
+      }
+    });
+
+    const flattenedIdList = flattenGroups(groups);
+
+    items
+      .map(e => e.id)
+      .filter(e => flattenedIdList.indexOf(e) === -1)
+      .forEach(e => {
+        const item = items.find(i => i.id === e);
+        if (item !== undefined) {
+          groups.push({cell: item.cell, key:item, group: []});
+        }
+      });
+
+    console.log({filteredRiskItems, selectedPriorities, items, groups});
+
+    setGroupedRiskItems(groups);
+  }, [selectedPriorities, filteredRiskItems, filterMitigated]);
+
   return (
   <div>
     <h1>Chart</h1>

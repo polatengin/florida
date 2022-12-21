@@ -93,6 +93,13 @@ export default ({project_fields, project_issue_items}: Props) => {
         return 2;
     }
   };
+
+  const getDurationByWorkItem = (item: ProjectIssueItem): number => {
+    const diffTime = Math.abs((new Date()).getTime() - new Date(item.createdAt).getTime());
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    return diffDays;
+  };
+
   const flattenGroups = (groups: GroupItem[]): number[] => {
     const idListGroup = groups.map(e => e.group.map(m => m.id));
     const idListGroupFlatten = ([] as number[]).concat(...idListGroup);

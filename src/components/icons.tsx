@@ -40,3 +40,9 @@ export const CheckIcon: FunctionComponent<IconProps> = (props: IconProps) => (
     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
   </svg>
 );
+
+export const OctagonIcon: FunctionComponent<IconProps> = (props: IconProps) => (
+  <svg fill="#fff" viewBox="0 0 24 24" stroke="currentColor" style={props.style} className={props.className} onClick={props.onClick}>
+    <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2" />
+  </svg>
+);

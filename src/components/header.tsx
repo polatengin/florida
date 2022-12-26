@@ -2,7 +2,7 @@ import { signIn, signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { ChartIcon } from '../components/icons';
 
-export default () => {
+export const HeaderComponent = () => {
 
   const { data: session } = useSession();
 

@@ -118,7 +118,7 @@ export default ({project_fields, project_issue_items}: Props) => {
     setRiskItems(project_issue_items);
     setFilteredRiskItems(project_issue_items);
     setSelectedPriorities(project_issue_items.map(e => e.priority).filter((v, i, a) => a.indexOf(v) === i).sort((a, b) => a - b).map(e => { return {p:e, s:true} }) ?? []);
-  }, [high_low_CellRef.current?.clientWidth, high_low_CellRef.current?.clientHeight]);
+  }, [project_issue_items, high_low_CellRef.current?.clientWidth, high_low_CellRef.current?.clientHeight]);
 
   useEffect(() => {
     if (filteredRiskItems === undefined) {

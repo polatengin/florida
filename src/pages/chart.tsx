@@ -22,7 +22,7 @@ export async function getStaticProps() {
   return { props: result };
 }
 
-export const ChartPage = ({project_fields, project_issue_items}: Props) => {
+export default ({project_fields, project_issue_items}: Props) => {
   console.log({project_fields, project_issue_items});
 
   return (

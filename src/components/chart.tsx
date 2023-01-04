@@ -193,5 +193,5 @@ export const ChartComponent = ({project_fields, project_issue_items}: Props) => 
       <label className="select-none inline-flex flex-grow justify-end" htmlFor="chkmitigated"><input id="chkmitigated" onChange={e => setFilterMitigated(!filterMitigated)} type="checkbox" checked={filterMitigated} />Include Mitigated</label>
     </div>
   </div>
-  )
+  );
 };

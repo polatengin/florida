@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import Chart from '../components/chart';
-import Header from '../components/header';
+import { ChartComponent } from '../components/chart';
+import { HeaderComponent } from '../components/header';
 
 import project_fields, { ProjectFields } from '../services/project_fields';
 import project_issue_items, { ProjectIssueItem } from '../services/project_issue_items';
@@ -20,7 +20,7 @@ export async function getStaticProps() {
   };
 
   return { props: result };
-}
+};
 
 export default ({project_fields, project_issue_items}: Props) => {
   console.log({project_fields, project_issue_items});
@@ -33,11 +33,11 @@ export default ({project_fields, project_issue_items}: Props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="flex flex-col h-screen overflow-hidden">
-        <Header />
+        <HeaderComponent />
         <main className="h-full p-6">
-          <Chart project_fields={project_fields} project_issue_items={project_issue_items} />
+          <ChartComponent project_fields={project_fields} project_issue_items={project_issue_items} />
         </main>
       </div>
     </>
-  )
-}
+  );
+};

@@ -1,6 +1,6 @@
 import Header from "../components/header";
 
-export default () => {
+export const IndexPage = () => {
   return (
     <>
       <div className="flex flex-col h-screen">

@@ -1,10 +1,10 @@
-import { signIn, signOut, useSession } from 'next-auth/react';
+// import { signIn, signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { ChartIcon } from '../components/icons';
 
 export const HeaderComponent = () => {
 
-  const { data: session } = useSession();
+  // const { data: session } = useSession();
 
   return (
     <header className="flex bg-gray-800 text-base font-medium text-gray-50">

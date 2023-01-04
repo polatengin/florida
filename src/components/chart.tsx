@@ -10,7 +10,7 @@ type Props = {
 
 type GroupItem = { cell: string, key: ProjectIssueItem, group: ProjectIssueItem[] };
 
-export default ({project_fields, project_issue_items}: Props) => {
+export const ChartComponent = ({project_fields, project_issue_items}: Props) => {
 
   const borderColorList = ["", "#4c206d", "#cc0000", "#7a83dd", "#5b88ab", "#005b99", "#4B0082", "#EE82EE"];
 

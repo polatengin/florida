@@ -13,7 +13,7 @@ export default NextAuth({
   providers: [
     GithubProvider({
       clientId: process.env.APP_ID as string,
-      clientSecret: process.env.GITHUB_SECRET as string,
+      clientSecret: process.env.APP_SECRET as string,
     }),
   ],
 });

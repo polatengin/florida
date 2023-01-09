@@ -20,22 +20,13 @@ jobs:
           submodules: true
 
       - name: GitHub Script
-        uses: actions/github-script@v6.3.3
-        with:
-          script: echo "${PROJECT_TOKEN}"
-          debug: true
+        run: echo "${PROJECT_TOKEN}"
 
       - name: GitHub Script
-        uses: actions/github-script@v6.3.3
-        with:
-          script: echo "${APP_ID}"
-          debug: true
+        run: echo "${APP_ID}"
 
       - name: GitHub Script
-        uses: actions/github-script@v6.3.3
-        with:
-          script: echo "${APP_SECRET}"
-          debug: true
+        run: echo "${APP_SECRET}"
 
       - name: Build And Deploy
         id: builddeploy

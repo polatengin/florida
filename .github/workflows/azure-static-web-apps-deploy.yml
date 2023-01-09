@@ -22,10 +22,19 @@ jobs:
       - name: GitHub Script
         uses: actions/github-script@v6.3.3
         with:
-          script: |
-            echo ${PROJECT_TOKEN}
-            echo ${APP_ID}
-            echo ${APP_SECRET}
+          script: echo "${PROJECT_TOKEN}"
+          debug: true
+
+      - name: GitHub Script
+        uses: actions/github-script@v6.3.3
+        with:
+          script: echo "${APP_ID}"
+          debug: true
+
+      - name: GitHub Script
+        uses: actions/github-script@v6.3.3
+        with:
+          script: echo "${APP_SECRET}"
           debug: true
 
       - name: Build And Deploy

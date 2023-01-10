@@ -20,6 +20,14 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Update .env file
+        run: |
+          content=$(cat .env.template)
+          content="${content//\{PROJECT_TOKEN\}/${PROJECT_TOKEN}}"
+          content="${content//\{APP_ID\}/${APP_ID}}"
+          content="${content//\{APP_SECRET\}/${APP_SECRET}}"
+          echo "$content" > .env
+
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
         with:

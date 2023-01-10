@@ -26,4 +26,4 @@ jobs:
           context: .
           file: ./src/Dockerfile
           push: true
-          tags: ghcr.io/${{ github.repository }}/riskheatmap-dashboard:${{ GITHUB_SHA }}
+          tags: ghcr.io/${{ github.repository }}/riskheatmap-dashboard:${{ github.sha }}

@@ -1,4 +1,4 @@
-name: riskheatmap-dashboard
+name: florida-project
 
 on:
   push:
@@ -26,4 +26,4 @@ jobs:
           context: ./src/
           file: ./src/Dockerfile
           push: true
-          tags: ghcr.io/${{ github.repository }}/riskheatmap-dashboard:${{ github.sha }}
+          tags: ghcr.io/${{ github.repository }}/florida:${{ github.sha }}

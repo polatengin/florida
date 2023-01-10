@@ -20,17 +20,10 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Docker meta
-        id: meta
-        uses: docker/metadata-action@v4
-        with:
-          images: name/app
-
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
         with:
           context: .
           file: ./src/Dockerfile
           push: true
-          tags: ghcr.io/${{ github.repository }}/riskheatmap-dashboard:${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: ghcr.io/${{ github.repository }}/riskheatmap-dashboard:${GITHUB_SHA}

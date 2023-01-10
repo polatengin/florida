@@ -22,11 +22,11 @@ jobs:
 
       - name: Update .env file
         run: |
-          content=$(cat .env.template)
+          content=$(cat ./src/.env.template)
           content="${content//\{PROJECT_TOKEN\}/${PROJECT_TOKEN}}"
           content="${content//\{APP_ID\}/${APP_ID}}"
           content="${content//\{APP_SECRET\}/${APP_SECRET}}"
-          echo "$content" > .env
+          echo "$content" > ./src/.env
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v2

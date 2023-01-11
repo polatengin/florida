@@ -11,5 +11,6 @@
     "ghcr.io/devcontainers-contrib/features/typescript:1": {},
     "ghcr.io/eitsupi/devcontainer-features/jq-likes:1": {}
   },
-  "forwardPorts": [ 3000 ]
+  "forwardPorts": [ 3000 ],
+  "remoteUser": "root"
 }

@@ -7,6 +7,9 @@
     "ghcr.io/devcontainers/features/docker-from-docker:1": {},
     "ghcr.io/devcontainers/features/github-cli:1": {},
     "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/devcontainers-contrib/features/npm-package:1": {
+      "npm-check-updates": "latest"
+    },
     "ghcr.io/devcontainers-contrib/features/jest:1": {},
     "ghcr.io/devcontainers-contrib/features/typescript:1": {},
     "ghcr.io/eitsupi/devcontainer-features/jq-likes:1": {}

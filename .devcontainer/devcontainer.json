@@ -1,3 +1,4 @@
 {
   "name": "RiskHeatmapDevEnvironment",
+  "image": "mcr.microsoft.com/devcontainers/base:bullseye"
 }
